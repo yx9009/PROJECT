@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.multipart.saveDir" value="/upload"></constant>
+<constant name="struts.devMode" value="true"></constant>
+<constant name="struts.serve.static.browserCache" value="false"></constant>
+<constant name="struts.i18n.reload" value="true"></constant>
+<constant name="struts.configuration.xml.reload" value="true"></constant>
+<package name="user" extends="struts-default" namespace="/user">
+		<action name="test" class="com.ACTION.userAction"
+			method="test">
+		<result name="success">/success.jsp</result>
+		</action>
+		<action name="upload" class="com.ACTION.userAction"
+			method="upload"><!--
+		<interceptor-ref name ="fileUpload" > 
+                <param name ="allowedTypes" > 
+                    image/bmp,image/png,image/gif,image/jpeg
+                </param > 
+            </interceptor-ref > 
+            <interceptor-ref name ="defaultStack" />  
+		-->
+		<result name="input">/upload1.jsp</result>
+		<result name="success">/success.jsp</result>
+		</action>
+		
+		<action name="uploads" class="com.ACTION.userAction"
+			method="uploads"><!--
+		<interceptor-ref name ="fileUpload" > 
+                <param name ="allowedTypes" > 
+                    image/bmp,image/png,image/gif,image/jpeg
+                </param > 
+            </interceptor-ref > 
+            <interceptor-ref name ="defaultStack" />  
+		-->
+		<result name="input">/upload1.jsp</result>
+		<result name="success">/success.jsp</result>
+		</action>
+</package>
+
+</struts>    
